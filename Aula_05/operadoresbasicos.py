@@ -1,5 +1,5 @@
-a = 10
-b = 20
+a = 7
+b = 3
 
 print(a+b)  #soma
 print(a-b)  #subtração
