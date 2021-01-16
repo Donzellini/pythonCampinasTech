@@ -22,3 +22,10 @@ dict_celulares = {"Modelo":"Galaxy S20", "Fabricante":"Samsung", "Preço":"R$ 31
 # print(dict_celulares["Tamanho"]) #<===Da erro pq não existe
 ##Dicionário has_key não existe em python 3
 # check = dict_celulares.has_key("Modelo")
+# print(check)
+# #Exporta uma lista com Chaves e Valores no formato Tupla
+# print(dict_celulares.items())
+# # #Dicionarios de chaves e valores
+# print(dict_celulares.keys())
+# print(dict_celulares.values())
+
