@@ -12,10 +12,12 @@ lista_refrigerantes = ['coca', 'guaraná', 'laranja', 'uva']
 lista_suco2 = ['laranja', 'uva', 'abacaxi', 'abacaxi' 'manga']
 #conta quantas vezes tem um elemento
 #print(lista_suco2.count('abacaxi'))
-#TODO: revisar a função extend no python 3
 
+#a função extend deve ser utilizada antes de printar
 lista_suco.extend(lista_suco2)
 print(lista_suco)
+
+
 #resultado do extend
 # lista3 = lista_suco + lista_suco2
 # print(lista3)
