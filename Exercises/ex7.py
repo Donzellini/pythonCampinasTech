@@ -58,7 +58,8 @@ import random
 
 num = int(input("Foi sorteado um número de 0 a 100. Qual número você irá escolher? "))
 sorteio = random.randint(0, 101)
-print(sorteio)
+# verificando se o intervalo está correto
+# print(sorteio)
 
 if num == sorteio:
     print('Parabéns, o número sorteado foi {}.'.format(sorteio))
