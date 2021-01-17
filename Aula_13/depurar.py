@@ -1,4 +1,4 @@
-entrada = input("Coloue um valor")
+entrada = input("Coloque um valor")
 if entrada.isnumeric():
     print("Você digitou um número")
 else:
