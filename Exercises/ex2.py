@@ -1,4 +1,4 @@
-# 2. Algoritmo para ir ao banco para sacar dinheiro (Imprimir a sequência para ir ao banco e sacar dinheiro)
+#2. Algoritmo para ir ao banco para sacar dinheiro (Imprimir a sequência para ir ao banco e sacar dinheiro)
 
 print("01. Chegar ao banco")
 print("02. Entrar na fila")
