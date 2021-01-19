@@ -2,15 +2,19 @@
 
 list_fruits = ["banana","apple","pineapple","strawberry","peach"]
 
-for fruit in list_fruits:
-    print(f"- {fruit}")
+i = 0
+t = len(list_fruits) - 1 #tratei a variável com -1 para pode usá-la na estrutura while
 
-name = input("Olá! Qual é o seu nome? ")
+while i <= t: #o loop percorrerá t, ou seja, o tamanho da lista, enquanto incrementa i
+    for fruit in list_fruits: 
+        print(f"[{i}] {fruit}") 
+        i = i + 1
 
-chosen_fruit = input("Você deve escolher uma das frutas acima para compra: ")
+name = input("Como devo lhe chamar? ")
 
-print(f"{name}, você irá comprar {chosen_fruit}.")
+chosen_fruit = int(input(f"{name}, você deve escolher uma das frutas acima para comprar: "))
 
-#mesma sugestão dos ex13 e 14
-#fazer um método para o solicitante comprar quantas frutas quiser
-#colocar um verificador se a fruta está na lista.
+if chosen_fruit in range(0, 5):
+    print(f"{name}, você escolheu {list_fruits[chosen_fruit]}")
+else:
+    print(f"{name}, você deve escolher uma opção válida.")
