@@ -50,7 +50,7 @@
 #_________________________________________________
 
 #_________________________________________________
-# QUARTO INÍCIO DE SOLUÇÃO
+# QUARTO INÍCIO DE SOLUÇÃO (DEFINITIVO)
 # O computador pensa em número de 0 a 100, selecionando apenas 1
 # O usuário deve acertar
 
