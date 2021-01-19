@@ -3,11 +3,17 @@
 name = input("Olá! Qual é o seu nome? ")
 list_places = ["Japão","Croácia", "Espanha","Noruega"]
 
-for place in list_places:
-    print(f"- {place}")
+i = 0
+t = len(list_places) - 1 #tratei a variável com -1 para pode usá-la na estrutura while
 
-chosen_place = input("Você deve escolher um dos locais acima para viajar: ")
+while i <= t: #o loop percorrerá t, ou seja, o tamanho da lista, enquanto incrementa i
+    for place in list_places: 
+        print(f"[{i}] {place}") 
+        i = i + 1
 
-print(f"{name}, você irá para {chosen_place}")
+chosen_place = int(input("Você deve escolher um dos locais acima para viajar: "))
 
-#sugestão: adicionar opções numéricas aos locais depois
+if chosen_place in range(0, 4):
+    print(f"{name}, você irá para {list_places[chosen_place]}")
+else:
+    print(f"{name}, você deve escolher uma opção válida.")
