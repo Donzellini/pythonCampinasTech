@@ -1,13 +1,20 @@
 print("----------------------------")
-print("           AGENDA")
+print("       REVISÃO DE AUTO")
 print("----------------------------")
-
-lista_opcoes = ["Novo Contato", "Visualizar Agenda", "Excluir Contato", "Sair"]
-i = 0
-t = len(lista_opcoes) - 1
+#variáveis globais
+lista_opcoes = ["Agendar Revisão", "Visualizar Agenda", "Sair"]
+lista_agendamentos = []
 agenda = {}
 opcao = 0
-lista_contatos = []
+
+#funções
+def listagem():
+    i = 0
+    t = len(lista_opcoes) - 1
+    while i <= t:
+        for num in lista_opcoes:
+            print(f"[{i}] {num}")
+            i += 1
 
 def sair():
     print("Saindo!")
@@ -15,60 +22,46 @@ def sair():
 def opcao_invalida():
     print("Digite uma opção válida.")
 
-def novo_contato():
+def agendar_revisao():
     global agenda
-    agenda['nome'] = (input("Nome: "))
-    agenda['telefone'] = (input("Telefone: "))
-    agenda['endereco'] = (input("Endereço: "))
+    agenda['proprietario'] = (input("Proprietário: "))
+    agenda['modelo'] = (input("Modelo: "))
+    agenda['ano'] = (input("Ano: "))
+    agenda['data'] = (input("Data: "))
+    agenda['hora'] = (input("Hora: "))
     armazena_dados()
 
 def armazena_dados():    
-    nome = agenda['nome']
-    telefone = agenda['telefone']
-    endereco = agenda['endereco']
-    lista_contatos.append([nome, telefone, endereco])
+    proprietario = agenda['proprietario']
+    modelo = agenda['modelo']
+    ano = agenda['ano']
+    data = agenda['data']
+    hora = agenda['hora']
+    lista_agendamentos.append([proprietario, modelo, ano, data, hora])
 
 def visualizar_agenda():
     indice = 0
-    for item in lista_contatos:
+    for item in lista_agendamentos:
         print(f"{indice} - {item}")
         indice += 1
 
-def excluir_contato():
-    visualizar_agenda()
-    item_deletado = int(input("Deletar item: "))
-    resposta = 0
-    while resposta != "N":
-        if item_deletado in range(0, len(lista_contatos)):
-            item_selecionado = lista_contatos.pop(item_deletado)
-            visualizar_agenda()
-            resposta = input("Deletar outro contato? (S/N): ")
-        else:
-            opcao_invalida()
-            if resposta == "S":
-                excluir_contato()
-            else:
-                opcao_invalida()
+listagem()
 
-while i <= t:
-    for num in lista_opcoes:
-        print(f"[{i}] {num}")
-        i += 1
-
+#leitor do input e trigger para as funções
 while opcao != 3:
     opcao = int(input("OPÇÃO: "))
 
     if opcao == 0:
-        novo_contato()
-    
-        if opcao == 1:
-            visualizar_agenda()
-    
-            if opcao == 2:
-                excluir_contato()
-    
-                if opcao == 3:
-                    sair()
-    else:
-        opcao_invalida()
+        agendar_revisao()
+        listagem()
+
+    if opcao == 1:
+        visualizar_agenda()
+
+    if opcao == 2:
+        sair()
+        break
+else:
+    opcao_invalida()
+    listagem()
     
