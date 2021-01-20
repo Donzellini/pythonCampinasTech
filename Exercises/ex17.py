@@ -1,14 +1,14 @@
 print("----------------------------")
 print("           AGENDA")
 print("----------------------------")
-#variáveis globais
+
 lista_opcoes = ["Novo Contato", "Visualizar Agenda", "Excluir Contato", "Sair"]
-lista_contatos = []
-agenda = {}
 i = 0
 t = len(lista_opcoes) - 1
+agenda = {}
 opcao = 0
-#funções
+lista_contatos = []
+
 def sair():
     print("Saindo!")
 
@@ -49,12 +49,12 @@ def excluir_contato():
                 excluir_contato()
             else:
                 opcao_invalida()
-#contador da lista de opções
+
 while i <= t:
     for num in lista_opcoes:
         print(f"[{i}] {num}")
         i += 1
-#leitor do input e trigger para as funções
+
 while opcao != 3:
     opcao = int(input("OPÇÃO: "))
 
@@ -71,3 +71,4 @@ while opcao != 3:
                     sair()
     else:
         opcao_invalida()
+    
