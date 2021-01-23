@@ -58,7 +58,6 @@ while opcao != 3:
 
     if opcao == 0:
         novo_contato(agenda)
-        # armazena_dados()
     
     if opcao == 1:
         visualizar_agenda()
