@@ -28,4 +28,4 @@ c.getAttr()          # again call parent's method
 #testando retorno booleano
 
 print(issubclass(Child, Parent)) #pra ver se é classe filha da outra
-print(isinstance(c, Child))
+print(isinstance(c, Child)) #pra verificar que classe herda de tal, é útil em códigos muito grandes

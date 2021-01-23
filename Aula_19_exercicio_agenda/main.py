@@ -70,5 +70,5 @@ while opcao != 3:
     if opcao == 3:
         sair()
         
-else:
-    opcao_invalida()
+    else:
+        opcao_invalida()
