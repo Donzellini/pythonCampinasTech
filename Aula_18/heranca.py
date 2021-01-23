@@ -24,3 +24,8 @@ c.childMethod()      # child calls its method
 c.parentMethod()     # calls parent's method
 c.setAttr(200)       # again call parent's method
 c.getAttr()          # again call parent's method
+
+#testando retorno booleano
+
+print(issubclass(Child, Parent)) #pra ver se é classe filha da outra
+print(isinstance(c, Child))
