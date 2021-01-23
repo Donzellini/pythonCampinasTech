@@ -1,31 +1,27 @@
-print("----------------------------")
-print("           AGENDA")
-print("----------------------------")
-#variáveis globais
+from agenda import agenda
+
 lista_opcoes = ["Novo Contato", "Visualizar Agenda", "Excluir Contato", "Sair"]
 lista_contatos = []
-agenda = {}
 i = 0
 t = len(lista_opcoes) - 1
 opcao = 0
-#funções
+
+#cabeçalho do programa
+def cabecalho():
+    print("----------------------------")
+    print("           AGENDA")
+    print("----------------------------")
+
 def sair():
     print("Saindo!")
 
 def opcao_invalida():
     print("Digite uma opção válida.")
-
-def novo_contato():
-    global agenda
-    agenda['nome'] = (input("Nome: "))
-    agenda['telefone'] = (input("Telefone: "))
-    agenda['endereco'] = (input("Endereço: "))
-    armazena_dados()
-
-def armazena_dados():    
-    nome = agenda['nome']
-    telefone = agenda['telefone']
-    endereco = agenda['endereco']
+    
+def novo_contato(agenda):
+    nome = input("Nome: ")
+    telefone = input("Telefone: ")
+    endereco = input("Endereço: ")
     lista_contatos.append([nome, telefone, endereco])
 
 def visualizar_agenda():
@@ -40,7 +36,7 @@ def excluir_contato():
     resposta = 0
     while resposta != "N":
         if item_deletado in range(0, len(lista_contatos)):
-            item_selecionado = lista_contatos.pop(item_deletado)
+            lista_contatos.pop(item_deletado)
             visualizar_agenda()
             resposta = input("Deletar outro contato? (S/N): ")
         else:
@@ -50,6 +46,8 @@ def excluir_contato():
             else:
                 opcao_invalida()
 #contador da lista de opções
+cabecalho()
+
 while i <= t:
     for num in lista_opcoes:
         print(f"[{i}] {num}")
@@ -59,7 +57,8 @@ while opcao != 3:
     opcao = int(input("OPÇÃO: "))
 
     if opcao == 0:
-        novo_contato()
+        novo_contato(agenda)
+        # armazena_dados()
     
     if opcao == 1:
         visualizar_agenda()
@@ -70,5 +69,5 @@ while opcao != 3:
     if opcao == 3:
         sair()
         
-    else:
-        opcao_invalida()
+else:
+    opcao_invalida()
