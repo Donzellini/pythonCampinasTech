@@ -174,13 +174,73 @@ while True:
                         break
 
     elif opcao_selecionada == 9: #Ver lista de cursos
-        pass
+        
+        for curso in lista_cursos:
+            print(f"{curso.nome}")
+
     elif opcao_selecionada == 10: #Incluir um novo curso
-        pass
+         
+        while True:
+            nome_curso = input("Digite o nome do Curso\n")
+            periodo_curso = input("Digite o período do Curso\n")
+            curso = Curso(nome=nome_curso,periodo=periodo_curso) #Incluindo o nome do curso no momento do construtor
+            lista_cursos.append(curso) #Insere um aluno na lista
+            print(f"O curso {curso.nome} foi inserido!")  #Mostra para o usuário que o append foi feito      
+        
+            #Solicitando a saída para o usuário    
+            controle_insert = input("Deseja incluir mais um aluno? (Digite 'n' ou 'N' para sair) \n")
+            if len(controle_insert) == 1:
+                if controle_insert == "n" or controle_insert == "N" or controle_insert == "S" or controle_insert == "s":
+                    if controle_insert.upper() == "N":
+                        print("Saíndo da inclusão de alunos...")
+                        break
+        
     elif opcao_selecionada == 11: #Excluir um curso existente
-        pass
+        
+        while True:
+            iterador_cursos = 0 
+            max_cursos = len(lista_cursos)
+            while iterador_cursos < max_cursos: #Outra forma de fazer loop em lista
+                print(f"Índice - {iterador_cursos} - {lista_cursos[iterador_cursos].nome}")
+                iterador_cursos += 1
+            input_do_usuario = input("Digite um valor para a exclusão do aluno \n")
+            
+            if input_do_usuario.isnumeric():
+                curso_selecionado = int(input_do_usuario) #Solicite para o usuário o índice
+                if curso_selecionado in range(0, max_cursos):
+                    curso_excluido = lista_cursos.pop(curso_selecionado) #pop para excluir o aluno e retornar o objeto excluído
+                    print(f"O curso {curso_excluido.nome} foi excluído") #mostra para o usuário
+                    #Solicitando a saída para o usuário    
+                    controle_exclusao = input("Deseja sair da exclusão? (Digite 's' ou 'S' para sair) \n")
+                    if len(controle_exclusao) == 1:
+                        if controle_exclusao == "n" or controle_exclusao == "N" or controle_exclusao == "S" or controle_exclusao == "s":
+                            if controle_exclusao.upper() == "S":
+                                print("Saíndo da exclusão de alunos...")
+                                break
+                else:
+                    print("Esse valor não existe")
+            else:
+                print("Esse valor deve ser um número")
+
     elif opcao_selecionada == 12: #Ver um curso
-        pass
+        
+        while True:
+            nome_curso_pesquisado = input("Digite o curso a ser pesquisado \n")
+            controle_iteracao = 0
+            for curso in lista_cursos:
+                if nome_curso_pesquisado.upper() in curso.nome.upper():
+                    print(f"O curso {curso.nome} no período {curso.periodo} consta na lista.")
+                    controle_iteracao += 1
+            if controle_iteracao == 0:
+                print("O curso não foi encontrado")
+
+            #Solicitando a saída para o usuário    
+            controle_pesquisa = input("Deseja sair da pesquisa? (Digite 's' ou 'S' para sair) \n")
+            if len(controle_pesquisa) == 1:
+                if controle_pesquisa == "n" or controle_pesquisa == "N" or controle_pesquisa == "S" or controle_pesquisa == "s":
+                    if controle_pesquisa.upper() == "S":
+                        print("Saíndo da pesquisa de cursos...")
+                        break
 
 
 
