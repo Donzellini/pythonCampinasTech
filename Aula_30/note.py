@@ -1,0 +1,1 @@
+#não tivemos código, aepnas confirguração do ambiente virtual com virtual env
